@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Check, Sparkles, Rocket, BarChart3, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -66,6 +67,7 @@ export default function App() {
             <a href="#how" className="hover:text-teal-700 transition-colors">How We Work</a>
             <a href="#templates" className="hover:text-teal-700 transition-colors">Growth Playbooks</a>
             <a href="#tools" className="hover:text-teal-700 transition-colors">Toolbox</a>
+            <a href="#partner" className="hover:text-teal-700 transition-colors">Partner</a>
             <a href="#faq" className="hover:text-teal-700 transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-2 flex-shrink-0">
@@ -90,7 +92,7 @@ export default function App() {
                 backgroundImage: 'linear-gradient(to right, #2d7a7a 0%, #46a2a2 30%, #6bb3b3 60%, #8cc6c6 85%, #b3d9d9 100%)'
               }}
             >
-              AI Marketing That Actually Works for Small Business
+              Organic Marketing That Actually Works for Small Business
             </h1>
             <p className="mt-5 text-slate-600 text-lg leading-relaxed max-w-prose">
               We combine AI efficiency with human strategy to help small businesses and private practices achieve sustainable growth — faster, smarter, and more affordably than traditional agencies.
@@ -197,12 +199,12 @@ export default function App() {
         </motion.div>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {[
-            {title: "Local SEO Dominator", tag: "Local SEO", desc: "Own the map pack and outrank competitors in your area."},
-            {title: "Content Authority Engine", tag: "Content", desc: "Build topical authority with AI-assisted, human-edited content."},
-            {title: "Reputation Builder", tag: "Brand", desc: "Automate review requests and manage online presence."},
-            {title: "Competitor Intel System", tag: "Research", desc: "Track competitors' content, offers, and rankings in real time."},
-            {title: "AI-Powered Blog Accelerator", tag: "SEO", desc: "Publish 8+ optimized articles per month with minimal effort."},
-            {title: "Conversion Optimizer", tag: "CRO", desc: "Turn more visitors into customers with strategic tweaks."},
+            {title: "Local SEO Dominator", tag: "Local SEO", desc: "Own the map pack and outrank competitors in your area.", slug: "local-seo-dominator"},
+            {title: "Content Authority Engine", tag: "Content", desc: "Build topical authority with AI-assisted, human-edited content.", slug: "content-authority-engine"},
+            {title: "Reputation Builder", tag: "Brand", desc: "Automate review requests and manage online presence.", slug: "reputation-builder"},
+            {title: "Competitor Intel System", tag: "Research", desc: "Track competitors' content, offers, and rankings in real time.", slug: "competitor-intel-system"},
+            {title: "AI-Powered Blog Accelerator", tag: "SEO", desc: "Publish 8+ optimized articles per month with minimal effort.", slug: "ai-blog-accelerator"},
+            {title: "Conversion Optimizer", tag: "CRO", desc: "Turn more visitors into customers with strategic tweaks.", slug: "conversion-optimizer"},
           ].map((t, i) => (
             <motion.div
               key={i}
@@ -220,7 +222,9 @@ export default function App() {
                 <CardContent className="px-6 pb-6">
                   <p className="text-sm text-slate-600 leading-relaxed">{t.desc}</p>
                   <motion.div whileHover={{ x: 4 }}>
-                    <Button variant="ghost" className="mt-4 px-0 text-teal-700 hover:text-teal-900">View →</Button>
+                    <Link to={`/playbook/${t.slug}`}>
+                      <Button variant="ghost" className="mt-4 px-0 text-teal-700 hover:text-teal-900">View →</Button>
+                    </Link>
                   </motion.div>
                 </CardContent>
               </Card>
@@ -261,6 +265,27 @@ export default function App() {
         </div>
       </Section>
 
+      {/* Partner */}
+      <Section id="partner" className="py-24">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Partner With Us</h2>
+          <p className="mt-5 text-slate-600 max-w-2xl mx-auto text-lg">Ready to grow together? Let's explore partnership opportunities.</p>
+          <motion.div 
+            className="mt-10"
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button className="rounded-2xl px-8 py-3">Apply to Partner</Button>
+          </motion.div>
+        </motion.div>
+      </Section>
+
       {/* CTA */}
       <Section className="py-20">
         <motion.div 
@@ -284,27 +309,35 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t mt-20" role="contentinfo">
-        <Section className="py-12 grid sm:grid-cols-3 gap-8 text-sm">
+      <footer className="bg-white border-t mt-20" role="contentinfo">
+        <Section className="py-16 grid sm:grid-cols-3 gap-12">
           <div>
-            <div className="font-semibold">The Marketier</div>
-            <p className="text-slate-600 mt-2 max-w-sm">AI-powered marketing that actually works for small business growth.</p>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/the-marketier-logo.png" 
+                alt="The Marketier" 
+                className="h-8 w-auto object-contain"
+              />
+            </div>
+            <p className="text-slate-600 text-base leading-relaxed max-w-sm">AI-powered marketing that actually works for small business growth.</p>
+            <div className="text-sm text-slate-500 mt-6">© {new Date().getFullYear()} The Marketier</div>
           </div>
           <div>
-            <div className="font-medium">Links</div>
-            <ul className="mt-2 space-y-2 text-slate-600">
-              <li><a href="#templates" className="hover:text-teal-700">Playbooks</a></li>
-              <li><a href="#tools" className="hover:text-teal-700">Toolbox</a></li>
-              <li><a href="#faq" className="hover:text-teal-700">FAQ</a></li>
+            <h3 className="font-semibold text-slate-900 text-base mb-4">Links</h3>
+            <ul className="space-y-3">
+              <li><a href="#templates" className="text-slate-600 hover:text-teal-700 transition-colors">Playbooks</a></li>
+              <li><a href="#tools" className="text-slate-600 hover:text-teal-700 transition-colors">Toolbox</a></li>
+              <li><a href="#partner" className="text-slate-600 hover:text-teal-700 transition-colors">Partner</a></li>
+              <li><a href="#faq" className="text-slate-600 hover:text-teal-700 transition-colors">FAQ</a></li>
             </ul>
           </div>
           <div>
-            <div className="font-medium">Get updates</div>
-            <form onSubmit={(e)=>e.preventDefault()} className="mt-2 flex gap-2">
-              <Input placeholder="you@company.com" className="h-10 rounded-xl" />
-              <Button className="h-10 rounded-xl">Subscribe</Button>
+            <h3 className="font-semibold text-slate-900 text-base mb-4">Get updates</h3>
+            <form onSubmit={(e)=>e.preventDefault()} className="flex gap-2 mb-4">
+              <Input placeholder="you@company.com" className="h-11 rounded-xl flex-1" />
+              <Button className="h-11 rounded-xl px-6">Subscribe</Button>
             </form>
-            <div className="text-xs text-slate-500 mt-2">© {new Date().getFullYear()} The Marketier</div>
+            <p className="text-sm text-slate-500">Stay updated with our latest insights and tools.</p>
           </div>
         </Section>
       </footer>
