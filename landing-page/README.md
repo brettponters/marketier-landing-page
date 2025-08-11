@@ -11,19 +11,14 @@ npm run dev
 ```
 The frontend will run on `http://localhost:5177`
 
-### Backend Setup
-```bash
-cd api
-npm install
-npm start
-```
-The API server will run on `http://localhost:3001`
+### No Backend Needed!
+The AI chatbot uses Vercel's built-in API routes - no separate backend server required.
 
 ## 🏗️ Architecture
 
-**Frontend**: React 18 + Vite + TailwindCSS + Framer Motion
-**Backend**: Express.js + OpenAI API + Security middleware
-**Deployment**: Frontend (Vercel) + Backend (Railway/Heroku)
+**Frontend**: React 18 + Vite + TailwindCSS + Framer Motion  
+**API**: Vercel serverless functions + OpenAI integration  
+**Deployment**: Single deployment to Vercel (frontend + API)
 
 ## 📁 Project Structure
 
@@ -46,13 +41,10 @@ The API server will run on `http://localhost:3001`
 
 ## ⚙️ Environment Variables
 
-### Backend (.env in /api folder)
+### Vercel Environment Variables
+Add in your Vercel dashboard:
 ```
 OPENAI_API_KEY=your_openai_api_key
-CORS_ORIGIN=http://localhost:5177
-PORT=3001
-RATE_LIMIT_WINDOW_MS=900000
-RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 ## 🔧 Development Commands
@@ -79,15 +71,14 @@ npm run dev         # Start with nodemon (if configured)
 
 ## 🚀 Deployment
 
-### Frontend (Vercel)
+### One-Click Vercel Deployment
 1. Connect repository to Vercel
 2. Set build command: `npm run build`
 3. Set output directory: `dist`
+4. Add environment variable: `OPENAI_API_KEY=your_key`
+5. Deploy! ✨
 
-### Backend (Railway/Heroku)
-1. Set environment variables in platform dashboard
-2. Deploy API server with start command: `npm start`
-3. Update CORS_ORIGIN to production frontend URL
+**That's it!** Both frontend and API deploy together.
 
 ## 📞 Contact
 

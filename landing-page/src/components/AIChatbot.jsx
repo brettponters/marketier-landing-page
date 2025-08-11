@@ -19,8 +19,8 @@ const AIChatbot = () => {
   const [availableSlots, setAvailableSlots] = useState([]);
   const messagesEndRef = useRef(null);
 
-  // Backend API configuration
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+  // API configuration - uses Vercel API routes
+  const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -33,7 +33,7 @@ const AIChatbot = () => {
 
   const getAIResponse = async (userMessage, conversationHistory) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/chat`, {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
