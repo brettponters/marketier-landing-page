@@ -1,48 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://themarketier.com/</loc>
+    <loc>https://www.themarketier.agency/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2025-08-11</lastmod>
   </url>
   <url>
-    <loc>https://themarketier.com/partner</loc>
+    <loc>https://www.themarketier.agency/partner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-08-11</lastmod>
   </url>
   <url>
-    <loc>https://themarketier.com/coming-soon</loc>
+    <loc>https://www.themarketier.agency/coming-soon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/local-seo-dominator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/content-authority-engine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/reputation-builder</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/competitor-intel-system</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/ai-blog-accelerator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://themarketier.com/playbook/conversion-optimizer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-11</lastmod>
   </url>
 </urlset>
