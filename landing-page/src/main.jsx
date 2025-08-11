@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import App from './App.jsx'
-import PlaybookPage from './PlaybookPage.jsx'
-import ComingSoonPage from './ComingSoonPage.jsx'
-import PartnerPage from './PartnerPage.jsx'
-import './index.css'
+import PlaybookPage from './pages/PlaybookPage.jsx'
+import ComingSoonPage from './pages/ComingSoonPage.jsx'
+import PartnerPage from './pages/PartnerPage.jsx'
+import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

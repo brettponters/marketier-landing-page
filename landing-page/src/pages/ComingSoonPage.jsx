@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Bell, Rocket, Calendar } from 'lucide-react';
-import SEOHead from './components/SEOHead';
+import SEOHead from '../components/SEOHead';
 
 function ComingSoonPage() {
   return (

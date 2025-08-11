@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Users, Check } from 'lucide-react';
-import SEOHead from './components/SEOHead';
+import SEOHead from '../components/SEOHead';
 
 function PartnerPage() {
   const [formData, setFormData] = useState({
