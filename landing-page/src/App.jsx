@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Check, Sparkles, Rocket, BarChart3, Layers } from "lucide-react";
 import { motion } from "framer-motion";
+import AIChatbot from "./components/AIChatbot";
 
 const Button = ({ variant = "default", className = "", children, ...props }) => (
   <button
@@ -71,8 +72,12 @@ export default function App() {
             <a href="#faq" className="hover:text-teal-700 transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Button variant="ghost" className="hidden sm:inline-flex">Sign in</Button>
-            <Button className="rounded-2xl">Join Free Community</Button>
+            <Link to="/coming-soon">
+              <Button variant="ghost" className="hidden sm:inline-flex">Sign in</Button>
+            </Link>
+            <Link to="/coming-soon">
+              <Button className="rounded-2xl">Join Free Community</Button>
+            </Link>
           </div>
         </Section>
       </header>
@@ -97,8 +102,8 @@ export default function App() {
             <p className="mt-5 text-slate-600 text-lg leading-relaxed max-w-prose">
               We combine AI efficiency with human strategy to help small businesses and private practices achieve sustainable growth — faster, smarter, and more affordably than traditional agencies.
             </p>
-            <form onSubmit={(e) => e.preventDefault()} className="mt-6 flex w-full max-w-lg gap-3">
-              <Input placeholder="Work email" className="h-11 rounded-xl" />
+            <form onSubmit={(e) => { e.preventDefault(); window.location.href = '/coming-soon'; }} className="mt-6 flex w-full max-w-lg gap-3">
+              <Input placeholder="Coming Soon" className="h-11 rounded-xl" />
               <Button type="submit" className="h-11 rounded-xl px-5">Join Free</Button>
             </form>
             <div className="mt-4 text-sm text-slate-500">No contracts. Cancel anytime.</div>
@@ -266,7 +271,8 @@ export default function App() {
       </Section>
 
       {/* Partner */}
-      <Section id="partner" className="py-24">
+      <Section className="py-32">
+        <div id="partner" className="absolute -mt-24"></div>
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -281,9 +287,166 @@ export default function App() {
             whileHover={{ scale: 1.05 }} 
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="rounded-2xl px-8 py-3">Apply to Partner</Button>
+            <Link to="/partner">
+              <Button className="rounded-2xl px-8 py-3">Apply to Partner</Button>
+            </Link>
           </motion.div>
         </motion.div>
+      </Section>
+
+      {/* FAQ */}
+      <Section id="faq" className="py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+            <p className="mt-4 text-slate-600 text-lg">Everything you need to know about working with The Marketier</p>
+          </div>
+          
+          <div className="space-y-4">
+            {[
+              {
+                question: "What makes The Marketier different from traditional marketing agencies?",
+                answer: "We combine AI efficiency with human strategy to deliver results 3x faster and 50% more affordably than traditional agencies. Our focus is on organic growth strategies that build lasting value, not just quick wins from paid ads."
+              },
+              {
+                question: "How quickly can I expect to see results?",
+                answer: "Most clients see initial improvements within 2-4 weeks, with significant growth typically occurring within 60-90 days. Our AI-powered approach allows us to implement and optimize strategies much faster than traditional methods."
+              },
+              {
+                question: "Do you work with businesses in my industry?",
+                answer: "Yes! We work with small businesses across all industries including retail, professional services, healthcare, SaaS, e-commerce, and more. Our AI adapts strategies to your specific industry and target audience."
+              },
+              {
+                question: "What's included in the free community membership?",
+                answer: "Free members get access to marketing templates, weekly tips, community forums, and basic AI tools. It's perfect for DIY marketers who want guidance and resources to grow their business."
+              },
+              {
+                question: "How much does it cost to partner with The Marketier?",
+                answer: "Our partnership packages start at $997/month with no long-term contracts. We offer customized pricing based on your needs and budget. Schedule a call to discuss what works best for your business."
+              },
+              {
+                question: "Can I cancel anytime?",
+                answer: "Absolutely! We believe in earning your business every month. There are no long-term contracts, and you can cancel or pause your service anytime with 30 days notice."
+              },
+              {
+                question: "Do you replace my existing marketing team?",
+                answer: "No, we complement and enhance your existing efforts. Think of us as your marketing co-pilot that makes your team more efficient and effective. We can work alongside your in-house team or serve as your complete marketing department."
+              },
+              {
+                question: "How do you use AI in your marketing strategies?",
+                answer: "We use AI for data analysis, content creation, audience insights, campaign optimization, and predictive modeling. But every strategy is reviewed and refined by human experts to ensure quality and brand alignment."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="border rounded-xl p-6 bg-white hover:shadow-md transition-shadow"
+              >
+                <details className="group">
+                  <summary className="flex justify-between items-center cursor-pointer list-none">
+                    <h3 className="font-semibold text-lg text-gray-900 pr-4">{item.question}</h3>
+                    <span className="text-[#46a2a2] group-open:rotate-180 transition-transform">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <p className="mt-4 text-gray-600 leading-relaxed">{item.answer}</p>
+                </details>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <Link to="/partner">
+              <Button className="rounded-xl">Schedule a Call</Button>
+            </Link>
+          </div>
+        </motion.div>
+        
+        {/* SEO Schema Markup for FAQ */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What makes The Marketier different from traditional marketing agencies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We combine AI efficiency with human strategy to deliver results 3x faster and 50% more affordably than traditional agencies. Our focus is on organic growth strategies that build lasting value, not just quick wins from paid ads."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly can I expect to see results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most clients see initial improvements within 2-4 weeks, with significant growth typically occurring within 60-90 days. Our AI-powered approach allows us to implement and optimize strategies much faster than traditional methods."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you work with businesses in my industry?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! We work with small businesses across all industries including retail, professional services, healthcare, SaaS, e-commerce, and more. Our AI adapts strategies to your specific industry and target audience."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's included in the free community membership?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Free members get access to marketing templates, weekly tips, community forums, and basic AI tools. It's perfect for DIY marketers who want guidance and resources to grow their business."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost to partner with The Marketier?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our partnership packages start at $997/month with no long-term contracts. We offer customized pricing based on your needs and budget. Schedule a call to discuss what works best for your business."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I cancel anytime?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely! We believe in earning your business every month. There are no long-term contracts, and you can cancel or pause your service anytime with 30 days notice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you replace my existing marketing team?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, we complement and enhance your existing efforts. Think of us as your marketing co-pilot that makes your team more efficient and effective. We can work alongside your in-house team or serve as your complete marketing department."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you use AI in your marketing strategies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We use AI for data analysis, content creation, audience insights, campaign optimization, and predictive modeling. But every strategy is reviewed and refined by human experts to ensure quality and brand alignment."
+                }
+              }
+            ]
+          })
+        }} />
       </Section>
 
       {/* CTA */}
@@ -297,12 +460,12 @@ export default function App() {
         >
           <h3 className="text-2xl sm:text-3xl font-semibold">Start Growing Smarter</h3>
           <p className="mt-3 text-slate-600 text-lg">Join our free AI marketing community and see how we combine technology and strategy to deliver measurable growth.</p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Input placeholder="Work email" className="h-11 rounded-xl max-w-xs mx-auto sm:mx-0" />
+          <form onSubmit={(e) => { e.preventDefault(); window.location.href = '/coming-soon'; }} className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <Input placeholder="Coming Soon" className="h-11 rounded-xl max-w-xs mx-auto sm:mx-0" />
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="h-11 rounded-xl">Join Free</Button>
+              <Button type="submit" className="h-11 rounded-xl">Join Free</Button>
             </motion.div>
-          </div>
+          </form>
           <div className="text-xs text-slate-500 mt-4">By continuing, you agree to our terms and privacy.</div>
         </motion.div>
       </Section>
@@ -327,7 +490,7 @@ export default function App() {
             <ul className="space-y-3">
               <li><a href="#templates" className="text-slate-600 hover:text-teal-700 transition-colors">Playbooks</a></li>
               <li><a href="#tools" className="text-slate-600 hover:text-teal-700 transition-colors">Toolbox</a></li>
-              <li><a href="#partner" className="text-slate-600 hover:text-teal-700 transition-colors">Partner</a></li>
+              <li><Link to="/partner" className="text-slate-600 hover:text-teal-700 transition-colors">Partner</Link></li>
               <li><a href="#faq" className="text-slate-600 hover:text-teal-700 transition-colors">FAQ</a></li>
             </ul>
           </div>
@@ -341,6 +504,9 @@ export default function App() {
           </div>
         </Section>
       </footer>
+      
+      {/* AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 }
