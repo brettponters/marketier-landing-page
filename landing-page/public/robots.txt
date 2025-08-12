@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://themarketier.com/sitemap.xml
+Sitemap: https://themarketier.agency/sitemap.xml

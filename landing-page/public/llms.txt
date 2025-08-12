@@ -32,14 +32,14 @@ We serve businesses across the United States with specialized expertise in:
 
 ## Key Pages
 
-- [Homepage](https://themarketier.com/): Overview of our AI marketing services
-- [Partner Program](https://themarketier.com/partner): Information about partnering with The Marketier
-- [Local SEO Dominator](https://themarketier.com/playbook/local-seo-dominator): Playbook for dominating local search results
-- [GEO for AI Lead Generation](https://themarketier.com/playbook/geo-ai-lead-generation): Guide to Generative Engine Optimization
-- [AI Blog Accelerator](https://themarketier.com/playbook/ai-blog-accelerator): AI-powered content creation system
-- [Reputation Builder](https://themarketier.com/playbook/reputation-builder): Automated review generation strategy
-- [Competitor Intel System](https://themarketier.com/playbook/competitor-intel-system): Real-time competitor tracking
-- [Conversion Optimizer](https://themarketier.com/playbook/conversion-optimizer): CRO strategies for higher conversions
+- [Homepage](https://themarketier.agency/): Overview of our AI marketing services
+- [Partner Program](https://themarketier.agency/partner): Information about partnering with The Marketier
+- [Local SEO Dominator](https://themarketier.agency/playbook/local-seo-dominator): Playbook for dominating local search results
+- [GEO for AI Lead Generation](https://themarketier.agency/playbook/geo-ai-lead-generation): Guide to Generative Engine Optimization
+- [AI Blog Accelerator](https://themarketier.agency/playbook/ai-blog-accelerator): AI-powered content creation system
+- [Reputation Builder](https://themarketier.agency/playbook/reputation-builder): Automated review generation strategy
+- [Competitor Intel System](https://themarketier.agency/playbook/competitor-intel-system): Real-time competitor tracking
+- [Conversion Optimizer](https://themarketier.agency/playbook/conversion-optimizer): CRO strategies for higher conversions
 
 ## Contact
 
@@ -71,5 +71,5 @@ Starting at $597/month with no long-term contracts. Custom packages available ba
 
 ## Optional
 
-- [Coming Soon](https://themarketier.com/coming-soon): Future features and updates
-- [FAQ](https://themarketier.com/#faq): Frequently asked questions
+- [Coming Soon](https://themarketier.agency/coming-soon): Future features and updates
+- [FAQ](https://themarketier.agency/#faq): Frequently asked questions

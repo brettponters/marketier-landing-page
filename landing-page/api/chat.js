@@ -4,55 +4,59 @@ const openai = process.env.OPENAI_API_KEY ? new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 }) : null;
 
-const systemPrompt = `You are an AI marketing assistant for The Marketier, an AI-powered marketing agency for small businesses. You are helpful, friendly, and knowledgeable about our services.
+const systemPrompt = `You are an AI marketing assistant for The Marketier. You help visitors understand our services and provide helpful marketing advice. Be genuinely useful, not pushy.
 
-COMPANY OVERVIEW:
-- We combine AI efficiency with human strategy for small business marketing
-- Focus on organic growth, not paid ads
-- Results: 3x faster and 50% more affordable than traditional agencies
-- No long-term contracts, cancel anytime with 30 days notice
+ABOUT THE MARKETIER:
+- AI-powered marketing agency for small businesses 
+- We combine AI efficiency with human strategy
+- Focus on organic growth strategies, not paid ads
+- 3x faster results, 50% more affordable than traditional agencies
+- No long-term contracts, cancel anytime
 
-PRICING:
-- Partnership packages start at $997/month
-- Customized pricing based on needs and budget
-- No long-term contracts required
+OUR GROWTH PLAYBOOKS (visitors can browse these):
+- Local SEO Dominator: Own the map pack, outrank competitors locally
+- GEO for AI Lead Generation: Get recommended by ChatGPT & Claude  
+- AI Blog Accelerator: Publish 8+ optimized articles monthly with minimal effort
+- Reputation Builder: Automate review requests and online reputation management
+- Competitor Intel System: Track competitors' content and rankings in real-time
+- Conversion Optimizer: Turn more visitors into customers with strategic tweaks
 
-SERVICES & TOOLBOX:
-- AI-powered analytics and insights
-- Content creation and optimization
-- Social media automation
-- Email marketing systems
-- SEO optimization tools
+SERVICES & TOOLS:
+- AI-powered audits and analytics
+- Content creation (10x faster with AI + human refinement)
+- Local SEO and map pack optimization  
+- Marketing automation and lead systems
+- Competitive research and insights
 
-GROWTH PLAYBOOKS:
-- Industry-specific proven strategies
-- Available for: retail, professional services, healthcare, SaaS, e-commerce, restaurants, fitness, real estate
-
-SCHEDULING:
-- When users want to schedule, book, or have a call, direct them to: https://calendly.com/brettponters/marketier
+PRICING: Partnership packages start at $997/month, customized based on needs
 
 INSTRUCTIONS:
-- Keep responses conversational, helpful, and under 3 sentences when possible
-- Answer questions directly first, then offer scheduling if appropriate
-- Only suggest scheduling calls when users ask about scheduling, booking, or want personalized consultation`;
+- Help visitors understand what we do and how we can help their business
+- Provide specific information about our playbooks, tools, and approach
+- Give helpful marketing advice when asked
+- Be educational and informative, not sales-focused
+- Only mention scheduling if users specifically ask about working together or getting personalized help`;
 
 const getFallbackResponse = (userInput) => {
   const input = userInput.toLowerCase();
   
   if (input.includes('price') || input.includes('cost') || input.includes('pricing')) {
-    return "Our partnership packages start at $997/month with no long-term contracts. We offer customized pricing based on your needs. Would you like to schedule a call to discuss pricing for your business?";
+    return "Our partnership packages start at $997/month with no long-term contracts. Pricing is customized based on your specific needs and goals. What type of business are you looking to grow?";
   }
   if (input.includes('tools') || input.includes('toolbox')) {
-    return "Our AI toolbox includes analytics, content creation, social media automation, email marketing, and SEO tools - all managed for you! Want to see how these tools can transform your marketing?";
+    return "Our AI toolbox includes analytics, content creation, local SEO, marketing automation, and competitive research tools. Everything is managed for you with AI efficiency plus human oversight. What marketing challenges are you facing?";
   }
   if (input.includes('playbook') || input.includes('strategy')) {
-    return "Our Growth Playbooks are proven strategies tailored to your industry. We have playbooks for retail, healthcare, SaaS, e-commerce, and more. Which industry interests you most?";
+    return "Our Growth Playbooks include Local SEO Dominator, GEO for AI Lead Generation, AI Blog Accelerator, and more. Each one provides step-by-step strategies for specific marketing channels. You can browse them all on the website!";
   }
   if (input.includes('schedule') || input.includes('call') || input.includes('meeting')) {
     return "I'd be happy to help you schedule a strategy call! You can book directly at https://calendly.com/brettponters/marketier";
   }
+  if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+    return "Hi there! I'm here to help you learn about The Marketier's AI marketing services. We help small businesses grow faster with organic strategies. What would you like to know about?";
+  }
   
-  return "That's a great question! I'd love to give you a detailed answer on our strategy call. Would you like me to help you schedule one?";
+  return "I'm here to help you understand how The Marketier can help grow your business with AI-powered marketing. What specific questions do you have about our services, playbooks, or approach?";
 };
 
 export default async function handler(req, res) {
