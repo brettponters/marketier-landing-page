@@ -57,36 +57,36 @@ const playbookData = {
       "50+ new reviews in first 6 months"
     ]
   },
-  "content-authority-engine": {
-    title: "Content Authority Engine",
-    category: "Content Marketing",
-    description: "Build topical authority with AI-assisted, human-edited content that ranks and converts.",
-    metaDescription: "Build unstoppable topical authority with The Marketier's Content Authority Engine. AI-powered content creation combined with human expertise to dominate search rankings.",
-    heroDescription: "Establish your brand as the go-to authority in your industry with strategic content that captures traffic, builds trust, and drives conversions.",
+  "geo-ai-lead-generation": {
+    title: "GEO for AI Lead Generation",
+    category: "AI Discovery & Lead Gen",
+    description: "Master Generative Engine Optimization (GEO) to capture leads from AI platforms like ChatGPT, Claude, and Perplexity.",
+    metaDescription: "Dominate AI search with The Marketier's GEO for AI Lead Generation playbook. Learn Generative Engine Optimization to get recommended by ChatGPT, Claude, and Perplexity for explosive lead growth.",
+    heroDescription: "GEO (Generative Engine Optimization) is the new SEO. While competitors fight for Google rankings, capture high-intent leads directly from AI platforms where 70% of users now start their search.",
     price: "$1,497/month",
-    timeline: "First results in 30-60 days",
-    idealFor: "B2B companies, SaaS, professional services, e-commerce brands",
+    timeline: "First AI mentions in 14-30 days",
+    idealFor: "B2B companies, SaaS, professional services, local businesses, anyone wanting first-mover advantage",
     features: [
-      "Topical authority mapping and content strategy",
-      "8-12 optimized articles per month",
-      "AI-powered content creation with human editing",
-      "Keyword clustering and content gap analysis",
-      "Internal linking optimization",
-      "Content refresh and optimization of existing pages",
-      "Featured snippet optimization",
-      "Content performance tracking and reporting"
+      "llms.txt implementation for AI discovery",
+      "AI platform optimization (ChatGPT, Claude, Perplexity, Gemini)",
+      "Structured data markup for AI comprehension",
+      "Location-based GEO for local AI visibility",
+      "AI-friendly content transformation",
+      "Citation and authority building for AI trust",
+      "Monitoring of AI platform mentions and recommendations",
+      "Competitive GEO analysis and gap identification"
     ],
     process: [
-      { step: "Research", description: "Deep dive into your industry, competitors, and content opportunities" },
-      { step: "Plan", description: "Create comprehensive content calendar targeting high-value topics" },
-      { step: "Create", description: "Produce SEO-optimized content with AI efficiency and human quality" },
-      { step: "Distribute", description: "Publish, promote, and build links to maximize content impact" }
+      { step: "Audit", description: "Analyze current AI visibility and identify optimization opportunities" },
+      { step: "Optimize", description: "Implement llms.txt, structured data, and AI-friendly content formats" },
+      { step: "Amplify", description: "Build authority signals that AI systems recognize and trust" },
+      { step: "Monitor", description: "Track AI mentions, analyze performance, and refine strategy" }
     ],
     results: [
-      "400% average increase in organic traffic",
-      "Top 10 rankings for 50+ target keywords",
-      "2x increase in average session duration",
-      "30% higher conversion rates from organic traffic"
+      "Get recommended by AI platforms within 30 days",
+      "10-15% of leads coming from AI referrals",
+      "3x higher conversion rates from AI-sourced traffic",
+      "First-mover advantage in your industry"
     ]
   },
   "reputation-builder": {

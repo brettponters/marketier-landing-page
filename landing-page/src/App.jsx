@@ -205,7 +205,7 @@ export default function App() {
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {[
             {title: "Local SEO Dominator", tag: "Local SEO", desc: "Own the map pack and outrank competitors in your area.", slug: "local-seo-dominator"},
-            {title: "Content Authority Engine", tag: "Content", desc: "Build topical authority with AI-assisted, human-edited content.", slug: "content-authority-engine"},
+            {title: "GEO for AI Lead Generation", tag: "AI Discovery", desc: "Master Generative Engine Optimization to get recommended by ChatGPT & Claude.", slug: "geo-ai-lead-generation"},
             {title: "Reputation Builder", tag: "Brand", desc: "Automate review requests and manage online presence.", slug: "reputation-builder"},
             {title: "Competitor Intel System", tag: "Research", desc: "Track competitors' content, offers, and rankings in real time.", slug: "competitor-intel-system"},
             {title: "AI-Powered Blog Accelerator", tag: "SEO", desc: "Publish 8+ optimized articles per month with minimal effort.", slug: "ai-blog-accelerator"},
